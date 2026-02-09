@@ -1,0 +1,230 @@
+.container {
+  flex: 1;
+  padding: 24px;
+  max-width: 1100px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.title {
+  font-size: 22px;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 24px;
+}
+
+/* Overview cards */
+.overview {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 14px;
+  margin-bottom: 28px;
+}
+
+.statCard {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: 18px 16px;
+  text-align: center;
+}
+
+.statIcon {
+  font-size: 28px;
+  display: block;
+  margin-bottom: 8px;
+}
+
+.statValue {
+  font-size: 26px;
+  font-weight: 700;
+  color: var(--text-primary);
+  display: block;
+}
+
+.statLabel {
+  font-size: 12px;
+  color: var(--text-muted);
+  margin-top: 4px;
+}
+
+/* Section */
+.section {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.sectionTitle {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 16px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--border-color);
+}
+
+/* Rating distribution */
+.ratingGrid {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.ratingItem {
+  flex: 1;
+  min-width: 100px;
+  background: var(--bg-card);
+  border-radius: var(--radius-md);
+  padding: 14px;
+  text-align: center;
+}
+
+.ratingBadge {
+  font-size: 20px;
+  font-weight: 800;
+  display: block;
+  margin-bottom: 6px;
+}
+
+.ratingSS { color: var(--rating-ss); }
+.ratingS { color: var(--rating-s); }
+.ratingA { color: var(--rating-a); }
+.ratingB { color: var(--rating-b); }
+
+.ratingCount {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--text-primary);
+  display: block;
+}
+
+.ratingLabel {
+  font-size: 11px;
+  color: var(--text-muted);
+  margin-top: 2px;
+}
+
+/* Bar chart rows */
+.rankList {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.rankRow {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.rankIndex {
+  width: 24px;
+  height: 24px;
+  border-radius: var(--radius-full);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: 700;
+  flex-shrink: 0;
+  background: var(--bg-card);
+  color: var(--text-muted);
+}
+
+.rankTop1 { background: rgba(255, 215, 0, 0.2); color: var(--accent-gold); }
+.rankTop2 { background: rgba(192, 192, 192, 0.2); color: #c0c0c0; }
+.rankTop3 { background: rgba(205, 127, 50, 0.2); color: #cd7f32; }
+
+.rankAvatar {
+  width: 32px;
+  height: 32px;
+  border-radius: var(--radius-sm);
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.rankName {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-primary);
+  width: 80px;
+  flex-shrink: 0;
+}
+
+.rankBarWrap {
+  flex: 1;
+  height: 20px;
+  background: var(--bg-card);
+  border-radius: 10px;
+  overflow: hidden;
+  position: relative;
+}
+
+.rankBar {
+  height: 100%;
+  border-radius: 10px;
+  transition: width 0.6s ease;
+}
+
+.rankBarHero { background: linear-gradient(90deg, var(--accent-green), rgba(0, 229, 160, 0.5)); }
+.rankBarEquip { background: linear-gradient(90deg, var(--accent-gold), rgba(255, 215, 0, 0.5)); }
+.rankBarSynergy { background: linear-gradient(90deg, var(--accent-purple), rgba(139, 92, 246, 0.5)); }
+
+.rankValue {
+  font-size: 12px;
+  color: var(--text-secondary);
+  width: 60px;
+  text-align: right;
+  flex-shrink: 0;
+}
+
+/* Version distribution */
+.versionGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 12px;
+}
+
+.versionItem {
+  background: var(--bg-card);
+  border-radius: var(--radius-md);
+  padding: 14px;
+  text-align: center;
+}
+
+.versionName {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--accent-green);
+  display: block;
+  margin-bottom: 4px;
+}
+
+.versionCount {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--text-primary);
+  display: block;
+}
+
+.versionLabel {
+  font-size: 11px;
+  color: var(--text-muted);
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 16px;
+  }
+
+  .overview {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .rankName {
+    width: 60px;
+  }
+}

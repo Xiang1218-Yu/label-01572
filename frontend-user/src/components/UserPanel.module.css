@@ -1,0 +1,189 @@
+.overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 199;
+}
+
+.panel {
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 0;
+  width: 300px;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+  z-index: 200;
+  overflow: hidden;
+  animation: panelSlideIn 0.2s ease;
+}
+
+@keyframes panelSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-8px) scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 20px 16px;
+  background: linear-gradient(135deg, rgba(139, 92, 246, 0.15), rgba(0, 229, 160, 0.1));
+  border-bottom: 1px solid var(--border-color);
+}
+
+.avatarLarge {
+  width: 48px;
+  height: 48px;
+  border-radius: var(--radius-full);
+  background: linear-gradient(135deg, var(--accent-purple), var(--accent-green));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  color: #fff;
+  flex-shrink: 0;
+}
+
+.userInfo {
+  flex: 1;
+  min-width: 0;
+}
+
+.nickname {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--text-primary);
+  display: block;
+}
+
+.uid {
+  font-size: 12px;
+  color: var(--text-muted);
+  margin-top: 2px;
+}
+
+.editBtn {
+  font-size: 12px;
+  color: var(--accent-green);
+  padding: 4px 10px;
+  border-radius: var(--radius-sm);
+  background: rgba(0, 229, 160, 0.1);
+  transition: background var(--transition);
+}
+
+.editBtn:hover {
+  background: rgba(0, 229, 160, 0.2);
+}
+
+.stats {
+  display: flex;
+  padding: 12px 16px;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.statItem {
+  flex: 1;
+  text-align: center;
+}
+
+.statValue {
+  display: block;
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.statLabel {
+  font-size: 11px;
+  color: var(--text-muted);
+  margin-top: 2px;
+}
+
+.menu {
+  padding: 8px 0;
+}
+
+.menuItem {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  padding: 10px 16px;
+  font-size: 13px;
+  color: var(--text-secondary);
+  transition: background var(--transition), color var(--transition);
+  text-align: left;
+}
+
+.menuItem:hover {
+  background: var(--bg-card-hover);
+  color: var(--text-primary);
+}
+
+.menuIcon {
+  font-size: 16px;
+  width: 20px;
+  text-align: center;
+}
+
+.menuDivider {
+  height: 1px;
+  background: var(--border-color);
+  margin: 4px 16px;
+}
+
+.nicknameForm {
+  display: flex;
+  gap: 8px;
+  padding: 12px 16px;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.nicknameInput {
+  flex: 1;
+  padding: 6px 10px;
+  border-radius: var(--radius-sm);
+  background: var(--bg-card);
+  border: 1px solid var(--border-light);
+  color: var(--text-primary);
+  font-size: 13px;
+  outline: none;
+}
+
+.nicknameInput:focus {
+  border-color: var(--accent-green);
+}
+
+.saveBtn {
+  padding: 6px 12px;
+  border-radius: var(--radius-sm);
+  background: var(--accent-green);
+  color: #000;
+  font-size: 12px;
+  font-weight: 600;
+  transition: opacity var(--transition);
+}
+
+.saveBtn:hover {
+  opacity: 0.85;
+}
+
+.cancelBtn {
+  padding: 6px 10px;
+  border-radius: var(--radius-sm);
+  background: var(--bg-card);
+  color: var(--text-secondary);
+  font-size: 12px;
+  transition: background var(--transition);
+}
+
+.cancelBtn:hover {
+  background: var(--bg-card-hover);
+}
