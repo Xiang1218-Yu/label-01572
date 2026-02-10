@@ -13,7 +13,7 @@ export default function HeroPage() {
           <div key={h.id} className={styles.card}>
             <img
               className={styles.avatar}
-              src={heroAvatar(h.name, h.cost)}
+              src={h.avatarUrl || heroAvatar(h.name, h.cost)}
               alt={h.name}
               loading="lazy"
             />

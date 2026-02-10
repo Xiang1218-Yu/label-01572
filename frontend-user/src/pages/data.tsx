@@ -140,7 +140,7 @@ export default function DataPage() {
           {heroRank.map((entry, i) => (
             <div key={entry.item.id} className={styles.rankRow}>
               <span className={`${styles.rankIndex} ${rankClass(i)}`}>{i + 1}</span>
-              <img className={styles.rankAvatar} src={heroAvatar(entry.item.name, entry.item.cost)} alt={entry.item.name} />
+              <img className={styles.rankAvatar} src={entry.item.avatarUrl || heroAvatar(entry.item.name, entry.item.cost)} alt={entry.item.name} />
               <span className={styles.rankName}>{entry.item.name}</span>
               <div className={styles.rankBarWrap}>
                 <div
@@ -161,7 +161,7 @@ export default function DataPage() {
           {equipRank.map((entry, i) => (
             <div key={entry.item.id} className={styles.rankRow}>
               <span className={`${styles.rankIndex} ${rankClass(i)}`}>{i + 1}</span>
-              <img className={styles.rankAvatar} src={equipAvatar(entry.item.name)} alt={entry.item.name} />
+              <img className={styles.rankAvatar} src={entry.item.iconUrl || equipAvatar(entry.item.name)} alt={entry.item.name} />
               <span className={styles.rankName}>{entry.item.name}</span>
               <div className={styles.rankBarWrap}>
                 <div

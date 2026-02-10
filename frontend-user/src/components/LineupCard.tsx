@@ -1,5 +1,5 @@
 import type { Lineup } from '../types';
-import { synergyAvatar, authorAvatar } from '../utils/avatar';
+import { synergyAvatar, authorAvatar, heroAvatar, equipAvatar } from '../utils/avatar';
 import Tooltip from './Tooltip';
 import styles from './LineupCard.module.css';
 
@@ -77,7 +77,7 @@ export default function LineupCard({ lineup, onClick }: LineupCardProps) {
                   <Tooltip content={{ name: ch.hero.name, description: ch.hero.description }}>
                     <img
                       className={styles.heroAvatarCore}
-                      src={ch.hero.avatarUrl}
+                      src={ch.hero.avatarUrl || heroAvatar(ch.hero.name, ch.hero.cost)}
                       alt={ch.hero.name}
                     />
                   </Tooltip>
@@ -86,7 +86,7 @@ export default function LineupCard({ lineup, onClick }: LineupCardProps) {
                       <Tooltip key={eq.id} content={{ name: eq.name, description: eq.description }}>
                         <img
                           className={styles.equipIcon}
-                          src={eq.iconUrl}
+                          src={eq.iconUrl || equipAvatar(eq.name)}
                           alt={eq.name}
                         />
                       </Tooltip>
@@ -106,7 +106,7 @@ export default function LineupCard({ lineup, onClick }: LineupCardProps) {
                 <Tooltip key={hero.id} content={{ name: hero.name, description: hero.description }}>
                   <img
                     className={styles.heroAvatarSmall}
-                    src={hero.avatarUrl}
+                    src={hero.avatarUrl || heroAvatar(hero.name, hero.cost)}
                     alt={hero.name}
                   />
                 </Tooltip>

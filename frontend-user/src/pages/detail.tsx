@@ -95,7 +95,7 @@ export default function DetailPage() {
           <div className={styles.coreList}>
             {lineup.coreHeroes.map((ch) => (
               <div key={ch.hero.id} className={styles.coreCard}>
-                <img src={heroAvatar(ch.hero.name, ch.hero.cost)} alt={ch.hero.name} className={styles.coreImg} />
+                <img src={ch.hero.avatarUrl || heroAvatar(ch.hero.name, ch.hero.cost)} alt={ch.hero.name} className={styles.coreImg} />
                 <div className={styles.coreInfo}>
                   <span className={styles.coreName}>{ch.hero.name}</span>
                   <span className={styles.coreCost}>{ch.hero.cost}费</span>
@@ -104,7 +104,7 @@ export default function DetailPage() {
                 <div className={styles.equipList}>
                   {ch.equipment.map((eq) => (
                     <Tooltip key={eq.id} content={{ name: eq.name, description: eq.description }}>
-                      <img src={equipAvatar(eq.name)} alt={eq.name} className={styles.equipImg} />
+                      <img src={eq.iconUrl || equipAvatar(eq.name)} alt={eq.name} className={styles.equipImg} />
                     </Tooltip>
                   ))}
                 </div>
@@ -120,7 +120,7 @@ export default function DetailPage() {
           {lineup.allHeroes.map((h) => (
             <Tooltip key={h.id} content={{ name: h.name, description: h.description }}>
               <div className={styles.heroTile}>
-                <img src={heroAvatar(h.name, h.cost)} alt={h.name} className={styles.heroTileImg} />
+                <img src={h.avatarUrl || heroAvatar(h.name, h.cost)} alt={h.name} className={styles.heroTileImg} />
                 <span className={styles.heroTileName}>{h.name}</span>
                 <span className={styles.heroTileCost}>{h.cost}费</span>
               </div>

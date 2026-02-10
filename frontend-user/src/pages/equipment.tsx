@@ -11,7 +11,7 @@ export default function EquipmentPage() {
           <div key={eq.id} className={styles.card}>
             <img
               className={styles.icon}
-              src={equipAvatar(eq.name)}
+              src={eq.iconUrl || equipAvatar(eq.name)}
               alt={eq.name}
               loading="lazy"
             />

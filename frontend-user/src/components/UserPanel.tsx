@@ -105,10 +105,6 @@ export default function UserPanel({ onClose }: UserPanelProps) {
             <span className={styles.statValue}>{user.history.length}</span>
             <span className={styles.statLabel}>浏览</span>
           </div>
-          <div className={styles.statItem}>
-            <span className={styles.statValue}>0</span>
-            <span className={styles.statLabel}>评论</span>
-          </div>
         </div>
 
         <div className={styles.menu}>
