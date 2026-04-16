@@ -18,12 +18,35 @@ export interface Equipment {
   iconUrl: string;
 }
 
+export interface HeroSkill {
+  id: string;
+  name: string;
+  description: string;
+  damage: number;
+  cooldown: number;
+  manaCost: number;
+}
+
+export interface HeroStats {
+  health: number;
+  attack: number;
+  defense: number;
+  attackSpeed: number;
+  magicResist: number;
+  moveSpeed: number;
+}
+
 export interface Hero {
   id: string;
   name: string;
   description: string;
   avatarUrl: string;
   cost: number;
+  stats: HeroStats;
+  skills: HeroSkill[];
+  recommendedEquipments: string[];
+  synergies: string[];
+  role: string;
 }
 
 export interface CoreHero {

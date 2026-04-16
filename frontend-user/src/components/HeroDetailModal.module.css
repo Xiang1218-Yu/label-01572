@@ -1,0 +1,238 @@
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 20px;
+}
+
+.modal {
+  background-color: #1a1a2e;
+  border-radius: 16px;
+  max-width: 700px;
+  max-height: 90vh;
+  overflow-y: auto;
+  position: relative;
+  color: #fff;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+}
+
+.closeBtn {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  width: 36px;
+  height: 36px;
+  border: none;
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  font-size: 24px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.2s;
+}
+
+.closeBtn:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.header {
+  display: flex;
+  gap: 24px;
+  padding: 32px;
+  background: linear-gradient(135deg, #16213e 0%, #1a1a2e 100%);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.avatar {
+  width: 120px;
+  height: 120px;
+  border-radius: 12px;
+  object-fit: cover;
+  border: 3px solid #e94560;
+}
+
+.headerInfo {
+  flex: 1;
+}
+
+.nameRow {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 8px;
+}
+
+.name {
+  font-size: 28px;
+  font-weight: 700;
+  margin: 0;
+}
+
+.cost {
+  font-size: 20px;
+  color: #ffd700;
+}
+
+.role {
+  display: inline-block;
+  padding: 4px 12px;
+  background: #e94560;
+  border-radius: 20px;
+  font-size: 14px;
+  margin-bottom: 12px;
+}
+
+.description {
+  color: rgba(255, 255, 255, 0.7);
+  margin: 0;
+  line-height: 1.6;
+}
+
+.section {
+  padding: 24px 32px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.section:last-child {
+  border-bottom: none;
+}
+
+.sectionTitle {
+  font-size: 18px;
+  font-weight: 600;
+  margin: 0 0 16px 0;
+  color: #e94560;
+}
+
+.statsGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+.statItem {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.statLabel {
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.statValue {
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.skillsList {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.skillItem {
+  padding: 16px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 8px;
+}
+
+.skillHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.skillName {
+  font-weight: 600;
+  font-size: 16px;
+}
+
+.skillMeta {
+  display: flex;
+  gap: 12px;
+  font-size: 12px;
+}
+
+.skillDamage {
+  color: #ff6b6b;
+}
+
+.skillCooldown {
+  color: #4ecdc4;
+}
+
+.skillMana {
+  color: #45b7d1;
+}
+
+.skillDesc {
+  margin: 0;
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.7);
+  line-height: 1.5;
+}
+
+.equipmentsList {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.equipmentItem {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 8px;
+}
+
+.equipmentIcon {
+  width: 48px;
+  height: 48px;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+.equipmentInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.equipmentName {
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.equipmentDesc {
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.synergiesList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.synergyTag {
+  padding: 6px 16px;
+  background: linear-gradient(135deg, #e94560 0%, #ff6b6b 100%);
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: 500;
+}
