@@ -12,6 +12,28 @@ const heroArb = fc.record({
   description: fc.string({ maxLength: 30 }),
   avatarUrl: fc.constant(''),
   cost: fc.integer({ min: 1, max: 5 }),
+  role: fc.constantFrom('射手', '法师', '战士', '坦克', '刺客', '辅助'),
+  stats: fc.record({
+    health: fc.integer({ min: 500, max: 1000 }),
+    attack: fc.integer({ min: 30, max: 100 }),
+    defense: fc.integer({ min: 10, max: 50 }),
+    attackSpeed: fc.double({ min: 0.5, max: 1.5 }),
+    magicResist: fc.integer({ min: 10, max: 50 }),
+    moveSpeed: fc.integer({ min: 300, max: 350 }),
+  }),
+  skills: fc.array(
+    fc.record({
+      id: fc.uuid(),
+      name: fc.string({ minLength: 1, maxLength: 10 }),
+      description: fc.string({ maxLength: 30 }),
+      damage: fc.integer({ min: 50, max: 300 }),
+      cooldown: fc.integer({ min: 0, max: 20 }),
+      manaCost: fc.integer({ min: 0, max: 100 }),
+    }),
+    { minLength: 1, maxLength: 4 }
+  ),
+  recommendedEquipments: fc.array(fc.string(), { minLength: 0, maxLength: 3 }),
+  synergies: fc.array(fc.string(), { minLength: 0, maxLength: 3 }),
 });
 
 const versionArb = fc.constantFrom('S14', 'S13.5', 'S13', 'S12.5');

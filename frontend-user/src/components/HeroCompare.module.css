@@ -1,0 +1,164 @@
+.compareContainer {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: 20px;
+  margin-bottom: 24px;
+}
+
+.compareHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.compareTitle {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin: 0;
+}
+
+.clearBtn {
+  padding: 6px 16px;
+  background: var(--bg-danger);
+  color: white;
+  border: none;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  font-size: 13px;
+  transition: background var(--transition);
+}
+
+.clearBtn:hover {
+  background: var(--bg-danger-hover);
+}
+
+.compareTable {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  overflow-x: auto;
+}
+
+.compareRow {
+  display: flex;
+  min-width: 600px;
+}
+
+.compareLabel {
+  width: 100px;
+  min-width: 100px;
+  padding: 10px 12px;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-secondary);
+  background: var(--bg-secondary);
+  border-radius: var(--radius-sm) 0 0 var(--radius-sm);
+  display: flex;
+  align-items: center;
+}
+
+.compareHeroHeader {
+  flex: 1;
+  min-width: 140px;
+  padding: 12px;
+  text-align: center;
+  background: var(--bg-secondary);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+}
+
+.compareHeroHeader:first-of-type {
+  border-radius: 0 var(--radius-sm) 0 0;
+}
+
+.compareHeroHeader:last-of-type {
+  border-radius: 0 0 var(--radius-sm) 0;
+}
+
+.removeBtn {
+  position: absolute;
+  top: 4px;
+  right: 4px;
+  width: 20px;
+  height: 20px;
+  border: none;
+  background: var(--bg-danger);
+  color: white;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 14px;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background var(--transition);
+}
+
+.removeBtn:hover {
+  background: var(--bg-danger-hover);
+}
+
+.compareAvatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--border-light);
+}
+
+.compareName {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.compareCost {
+  font-size: 12px;
+  color: var(--text-gold);
+}
+
+.compareRole {
+  font-size: 12px;
+  color: var(--text-secondary);
+}
+
+.compareValue {
+  flex: 1;
+  min-width: 140px;
+  padding: 10px 12px;
+  text-align: center;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.bestValue {
+  background: var(--bg-success);
+  color: var(--text-success);
+  font-weight: 600;
+}
+
+.compareSynergies {
+  flex: 1;
+  min-width: 140px;
+  padding: 10px 12px;
+  text-align: center;
+  font-size: 12px;
+  color: var(--text-secondary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 4px;
+}
