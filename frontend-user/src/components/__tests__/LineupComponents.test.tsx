@@ -7,14 +7,6 @@ import type { Lineup } from '../../types';
 
 const ratingArb = fc.constantFrom('SS' as const, 'S' as const, 'A' as const, 'B' as const);
 
-const heroArb = fc.record({
-  id: fc.uuid(),
-  name: fc.stringMatching(/^[a-zA-Z\u4e00-\u9fa5]{1,6}$/),
-  description: fc.string({ maxLength: 20 }),
-  avatarUrl: fc.constant(''),
-  cost: fc.integer({ min: 1, max: 5 }),
-});
-
 const equipArb = fc.record({
   id: fc.uuid(),
   name: fc.string({ minLength: 1, maxLength: 10 }),
@@ -28,6 +20,39 @@ const synergyArb = fc.record({
   description: fc.string({ maxLength: 20 }),
   iconUrl: fc.constant(''),
   count: fc.integer({ min: 2, max: 6 }),
+});
+
+const heroStatsArb = fc.record({
+  health: fc.integer({ min: 500, max: 2500 }),
+  attackDamage: fc.integer({ min: 20, max: 100 }),
+  abilityPower: fc.integer({ min: 0, max: 150 }),
+  armor: fc.integer({ min: 10, max: 100 }),
+  magicResist: fc.integer({ min: 10, max: 100 }),
+  attackSpeed: fc.integer({ min: 50, max: 150 }),
+  range: fc.integer({ min: 1, max: 5 }),
+  mana: fc.integer({ min: 50, max: 200 }),
+});
+
+const heroSkillArb = fc.record({
+  id: fc.uuid(),
+  name: fc.string({ minLength: 1, maxLength: 10 }),
+  description: fc.string({ maxLength: 30 }),
+  damage: fc.integer({ min: 50, max: 500 }),
+  cooldown: fc.integer({ min: 5, max: 30 }),
+  cost: fc.integer({ min: 10, max: 100 }),
+  iconUrl: fc.constant(''),
+});
+
+const heroArb = fc.record({
+  id: fc.uuid(),
+  name: fc.stringMatching(/^[a-zA-Z\u4e00-\u9fa5]{1,6}$/),
+  description: fc.string({ maxLength: 20 }),
+  avatarUrl: fc.constant(''),
+  cost: fc.integer({ min: 1, max: 5 }),
+  stats: heroStatsArb,
+  skills: fc.array(heroSkillArb, { minLength: 1, maxLength: 4 }),
+  bestEquipment: fc.array(equipArb, { minLength: 1, maxLength: 3 }),
+  synergies: fc.array(synergyArb, { minLength: 0, maxLength: 3 }),
 });
 
 const coreHeroArb = fc.record({
